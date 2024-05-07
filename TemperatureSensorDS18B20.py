@@ -8,7 +8,7 @@ class TemperatureSensorDS18B20:
         self.sensor_id = sensor_id
 
     def get_temperature(self):
-        response = requests.get("http://192.168.0.40:8080/temperatura/" + self.sensor_id)
+        response = requests.get("http://127.0.0.1:8081/temperatura/" + self.sensor_id)
         # print("CODE: ")
         # print(response.status_code)
         # print(response.json())
