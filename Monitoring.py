@@ -13,6 +13,7 @@ fireplace = Fireplace()
 elapsed_time = 0
 
 def monitor():
+    global elapsed_time
     while True:
         start_time = time.time()
         c1 = fireplace.get_water_temperature()

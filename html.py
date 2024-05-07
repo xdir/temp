@@ -2,12 +2,12 @@ def return_html(elapsed_time, c1, c2, c3, s1, s2, s3):
     return f"""
     <html>
         <head>
-            <title>Temperatura ({elapsed_time} ms.)</title>
+            <title>Temperatura</title>
             <meta http-equiv="refresh" content="1">
         </head>
         <body>
             <div style="font-size: 60px; text-align: center; margin-top: 100px;">
-                Temperaturos
+                Temperaturos ({elapsed_time} ms.)
             </div>
             <div style="font-size: 48px; border: 3px solid grey; margin-top: 100px; padding: 10px">
                 <div style="margin-top: 50px;">Zidinys: <span style="font-weight: bold;">{c1} C°</span></div>
