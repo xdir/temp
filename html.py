@@ -1,8 +1,8 @@
-def return_html(c1, c2, c3, s1, s2, s3):
+def return_html(elapsed_time, c1, c2, c3, s1, s2, s3):
     return f"""
     <html>
         <head>
-            <title>Temperatura</title>
+            <title>Temperatura ({elapsed_time} ms.)</title>
             <meta http-equiv="refresh" content="1">
         </head>
         <body>
@@ -15,6 +15,7 @@ def return_html(c1, c2, c3, s1, s2, s3):
                 <div style="margin-top: 50px; margin-bottom: 50px;">Gryztamas is grindu: <span style="font-weight: bold;">{c3} C°</span></div>
             </div>
             
+            <!--
             <div style="font-size: 60px; text-align: center; margin-top: 100px;">
                 Sistemos busena
             </div>
@@ -24,7 +25,8 @@ def return_html(c1, c2, c3, s1, s2, s3):
                 <div style="margin-top: 50px;">Grindu siurblys: <span style="font-weight: bold; color: green">{s2}</span></div>
                 <div style="margin-top: 50px; margin-bottom: 50px;">Avarinis ausinimas: <span style="font-weight: bold; color: green">{s3}</span></div>
             </div>
-
+            -->
+            
         </body>
     </html>
     """

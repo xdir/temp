@@ -10,19 +10,19 @@ from html import return_html
 app = Flask(__name__)
 underfloorHeating = UnderfloorHeating()
 fireplace = Fireplace()
-
+elapsed_time = 0
 
 def monitor():
     while True:
-        startTime = time.time()
+        start_time = time.time()
         c1 = fireplace.get_water_temperature()
         fireplace.determine_heating_state(c1)
         fireplace.determine_emergency_cooling(c1)
         # c2 = underfloorHeating.in_water_temperature.get_temperature()
         # c3 = underfloorHeating.out_water_temperature.get_temperature()
-        endTime = time.time()
-        elapsedTime = (int)((endTime - startTime) * 1000)
-        print(f"Elapsed time: {elapsedTime} ms. "
+        end_time = time.time()
+        elapsed_time = (int)((end_time - start_time) * 1000)
+        print(f"Elapsed time: {elapsed_time} ms. "
               + "Sleep time=" + str(get_sleep_time()) + " "
               + "Heating=" + str(fireplace.is_heating_on()) + " "
               + str(fireplace.get_water_temperature()) + "C° "
@@ -40,7 +40,7 @@ def status():
     s1 = "Ijungtas" if fireplace.is_heating_on() else "Isjungtas !!!!"
     s2 = "Ijungtas" if underfloorHeating.is_circulation_pump_on() else "Isjungtas !!!!"
     s3 = "Isjungtas" if fireplace.is_emergency_cooling_on() else "Isjungtas !!!!"
-    return return_html(c1, c2, c3, s1, s2, s3)
+    return return_html(elapsed_time, c1, c2, c3, s1, s2, s3)
 
 
 def get_sleep_time():
