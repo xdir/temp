@@ -38,7 +38,7 @@ def status():
     c3 = underfloorHeating.out_water_temperature.get_temperature()
 
     s1 = "Ijungtas" if fireplace.is_heating_on() else "Isjungtas !!!!"
-    s2 = "Ijungtas" if underfloorHeating.main_circulation_pump.is_on() else "Isjungtas !!!!"
+    s2 = "Ijungtas" if underfloorHeating.is_circulation_pump_on() else "Isjungtas !!!!"
     s3 = "Isjungtas" if fireplace.is_emergency_cooling_on() else "Isjungtas !!!!"
     return return_html(c1, c2, c3, s1, s2, s3)
 
