@@ -1,12 +1,12 @@
 from Relay import Relay
-from TemperatureSensorDS18B20 import TemperatureSensorDS18B20
+from DS18B20 import DS18B20
 from sensor_map import sensors_ids
 
 
 class UnderfloorHeating:
 
-    in_water_temperature = TemperatureSensorDS18B20(sensors_ids["paduodamas"])
-    out_water_temperature = TemperatureSensorDS18B20(sensors_ids["gryztamas"])
+    in_water_temperature = DS18B20(sensors_ids["paduodamas"])
+    out_water_temperature = DS18B20(sensors_ids["gryztamas"])
 
     __main_circulation_pump_relay = Relay(6)
     __backup_circulation_pump_relay = Relay(7)

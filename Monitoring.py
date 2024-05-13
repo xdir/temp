@@ -16,11 +16,10 @@ def monitor():
     global elapsed_time
     while True:
         start_time = time.time()
-        c1 = fireplace.get_water_temperature()
-        fireplace.determine_heating_state(c1)
-        fireplace.determine_emergency_cooling(c1)
+        fireplace.determine_heating_state()
+        fireplace.determine_emergency_cooling()
         # c2 = underfloorHeating.in_water_temperature.get_temperature()
-        # c3 = underfloorHeating.out_water_temperature.get_temperature()
+        # c3 = un    derfloorHeating.out_water_temperature.get_temperature()
         end_time = time.time()
         elapsed_time = (int)((end_time - start_time) * 1000)
         print(f"Elapsed time: {elapsed_time} ms. "

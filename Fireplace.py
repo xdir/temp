@@ -1,11 +1,12 @@
+from EmergencyDischarge import EmergencyDischarge
 from Relay import Relay
-from TemperatureSensorDS18B20 import TemperatureSensorDS18B20
+from DS18B20 import DS18B20
 from sensor_map import sensors_ids
 
 
 class Fireplace:
-    __water_temperature_sensor = TemperatureSensorDS18B20(sensors_ids["zidinys"])
-    __emergency_water_relay = Relay(5)
+    __emergencyDischarge = EmergencyDischarge()
+    __water_temperature_sensor = DS18B20(sensors_ids["zidinys"])
     __main_circulation_pump_relay = Relay(6)
     __backup_circulation_pump_relay = Relay(6)
 
@@ -13,7 +14,7 @@ class Fireplace:
     def start_emergency_cooling(self):
         print("Starting emergency cooling")
         self.__emergency_water_relay.on()
-        # tikrinti
+        # tikrinti ismetimo srauta
 
     def stop_emergency_cooling(self):
         print("Stopping emergency cooling")
@@ -39,15 +40,16 @@ class Fireplace:
 
     # ========================
 
-    def determine_heating_state(self, temperature):
-        if temperature > 25:
+    def determine_heating_state(self):
+        if self.get_water_temperature() > 25:
             if not self.is_heating_on.is_on():
                 self.start_circulation_pump()
         else:
             if self.is_heating_on():
                 self.stop_circulation_pump()
 
-    def determine_emergency_cooling(self, temperature):
+    def determine_emergency_cooling(self):
+        temperature = self.get_water_temperature()
         if temperature >= 30 and self.is_emergency_cooling_on() == False:
             self.start_emergency_cooling()
         else:

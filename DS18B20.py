@@ -1,7 +1,7 @@
 import requests
 
 
-class TemperatureSensorDS18B20:
+class DS18B20:
     sensor_id = ""
 
     def __init__(self, sensor_id):

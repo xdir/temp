@@ -1,0 +1,13 @@
+[Unit]
+Description=API Mocked
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=xdir
+ExecStart=/usr/bin/python3 /home/xdir/temp/API_Mocked.py
+
+[Install]
+WantedBy=multi-user.target
