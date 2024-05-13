@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route('/get_sensor_data/<sensor_id>', methods=['GET'])
 def get_temperature(sensor_id):
     temperature = random.randint(20, 72)
-    temperature = 222
+    temperature = 333
     timestamp = int(datetime.datetime.now().timestamp() * 1000)
     return jsonify({'temperature': temperature, 'timestamp': timestamp})
 
