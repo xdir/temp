@@ -1,8 +1,10 @@
 #!/bin/bash
 git pull
 
-systemctl start api
-systemctl enable api
+sudo cp api.service /etc/systemd/system/api.service
 
-systemctl start monitoring
-systemctl enable monitoring
+sudo systemctl start api
+sudo systemctl enable api
+
+#sudo systemctl start monitoring
+#sudo systemctl enable monitoring
