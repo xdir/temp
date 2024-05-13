@@ -1,8 +1,8 @@
 #!/bin/bash
 git pull
 
-sudo cp api.service /etc/systemd/system/deploy.service
-sudo cp api.service /etc/systemd/system/monitoring.service
+sudo cp deploy.service /etc/systemd/system/deploy.service
+sudo cp monitoring.service /etc/systemd/system/monitoring.service
 sudo cp api.service /etc/systemd/system/api.service
 
 sudo systemctl daemon-reload
