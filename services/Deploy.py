@@ -1,15 +1,13 @@
 import subprocess
-import random
-import datetime
 
-from flask import Flask, jsonify
+from flask import Flask
 
 app = Flask(__name__)
 
 
 @app.route('/deploy', methods=['GET'])
 def deploy():
-    result = subprocess.run(['git', 'pull'], shell=True, text=True, capture_output=True)
+    result = subprocess.run(['sudo', 'sh', ''], shell=True, text=True, capture_output=True)
     output = result.stdout
     print(output)
     if result.returncode != 0:
@@ -18,4 +16,4 @@ def deploy():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8081)
+    app.run(host='0.0.0.0', port=8082)
