@@ -6,7 +6,7 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
-User=xdir
+User=root
 ExecStart=/usr/bin/python3 /home/xdir/temp/services/Deploy.py
 
 [Install]

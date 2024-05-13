@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/deploy', methods=['GET'])
 def deploy():
-    result = subprocess.run(['sudo', 'sh', 'create_service.sh'], shell=True, text=True, capture_output=True)
+    result = subprocess.run(['sh', 'create_service.sh'], shell=True, text=True, capture_output=True)
     output = result.stdout
     print(output)
     if result.returncode != 0:
