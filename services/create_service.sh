@@ -5,7 +5,7 @@ sudo cp api.service /etc/systemd/system/deploy.service
 sudo cp api.service /etc/systemd/system/monitoring.service
 sudo cp api.service /etc/systemd/system/api.service
 
-systemctl daemon-reload
+sudo systemctl daemon-reload
 
 sudo systemctl start deploy
 sudo systemctl enable deploy
